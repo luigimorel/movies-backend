@@ -6,7 +6,13 @@ This repo contains my solution to the recruitment task at IFMA
 
 - Build a REST API to show movie directors
 
+## Solutions
+
+Here's the [Postman Collection](https://restless-meadow-827052.postman.co/workspace/My-Workspace~53eaee61-d6f5-464c-8eea-14c5e3f75563/collection/9378808-dcec59e5-1a62-4161-a54f-c1f835c7c7e3?action=share&creator=9378808)
+
 ## Tools used
+
+b
 
 - Typescript
 - Node.js (Express)
