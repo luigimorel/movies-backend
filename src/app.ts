@@ -30,7 +30,7 @@ connection.once("open", function () {
 
 // Home route
 app.get("/api/", (req: Request, res: Response) => {
-  res.json({ message: "Welcome to the API" });
+  res.json({ message: "Welcome to the API\n Please specify a version " });
 });
 
 // User routes
@@ -39,4 +39,4 @@ app.use("/api/v1", routes);
 // Server
 app.listen(port, () => console.log(`Server started on port ${port} \nPress CTRL + C to close the connection...\n`));
 
-module.exports = app;
+export default app;
