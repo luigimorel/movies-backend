@@ -12,13 +12,11 @@ Here's the [Postman Collection](https://restless-meadow-827052.postman.co/worksp
 
 ## Tools used
 
-b
-
 - Typescript
 - Node.js (Express)
 - MongoDB
 - Docker
-- Yarn
+- NPM
 
 ### Set up instructions
 
@@ -56,3 +54,9 @@ $ cp .env.example .env
 ```sh
 $ npm run dev
 ```
+
+## Improvements
+
+- Use a separate database for running tests
+- Mock the database connection using `mongodb-memory-server`
+- Add deployment scripts using Docker and docker-compose
