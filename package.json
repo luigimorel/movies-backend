@@ -2,14 +2,14 @@
   "name": "ifma_test",
   "version": "1.0.0",
   "description": "An API built with NodeJS, Express, MongoDB and TypeScript",
-  "main": "src/app.ts",
+  "main": "src/server.ts",
   "scripts": {
-    "dev": "nodemon src/app.ts",
+    "dev": "nodemon src/server.ts",
     "clean": "rm -rf ./dist",
-    "test": "jest --watchAll --detectOpenHandles",
+    "test": "jest --forceExit --detectOpenHandles  --watchAll --maxWorkers=1",
     "build": "tsc",
     "lint": "eslint . --ext .ts",
-    "start": "nodemon ./dist/server.js",
+    "start": "node src/server.ts",
     "prod": "npm run build && npm run start"
   },
   "keywords": [
@@ -22,6 +22,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "mongodb-memory-server": "^8.12.2",
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
     "ts-node": "^10.9.1"

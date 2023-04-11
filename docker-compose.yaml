@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    networks:
+      - default
+  db:
+    image: "mongo:mongo:4.4.20-rc0-focal"
+    ports:
+      - "27017:27017"
+    networks:
+      - default

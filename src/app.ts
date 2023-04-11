@@ -1,15 +1,15 @@
-import "dotenv/config";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 import cors from "cors";
-import express, { Request, Response } from "express";
+import express, { Application, Request, Response } from "express";
 import mongoose from "mongoose";
 import morgan from "morgan";
 import routes from "./routes/routes";
 
-const app = express();
+const app: Application = express();
 
-const dbUrl = process.env.MONGO_URI || "";
-const port = process.env.PORT || 3000;
+const dbUrl: string = process.env.MONGO_URI ?? "mongodb://localhost:27017/ifma_test";
 
 // Middleware
 app.use(cors());
@@ -29,14 +29,13 @@ connection.once("open", function () {
 });
 
 // Home route
-app.get("/api/", (req: Request, res: Response) => {
-  res.json({ message: "Welcome to the API\n Please specify a version " });
+app.get("/api/", async (req: Request, res: Response): Promise<Response> => {
+  return res.status(200).send({ message: "Welcome to the API\n Please specify a version" });
 });
 
 // User routes
 app.use("/api/v1", routes);
 
 // Server
-app.listen(port, () => console.log(`Server started on port ${port} \nPress CTRL + C to close the connection...\n`));
 
 export default app;
