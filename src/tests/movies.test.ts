@@ -12,42 +12,49 @@ afterEach((done) => {
   done();
 });
 
-describe("GET /api/v1/movies", () => {
-  it("should return all movies", async () => {
+describe("movie tests ", () => {
+  test("GET /api/v1/movies should return all movies", async () => {
     const res = await request(app).get("/api/v1/movies");
     expect(res.statusCode).toBe(200);
     expect(res.body.length).toBeGreaterThan(0);
   });
-});
 
-describe("POST /api/v1/movies", () => {
-  it("should create a movie", async () => {
+  test("POST /api/v1/movies should create a movie", async () => {
     const res = await request(app).post("/api/v1/movies").send({
       title: "Movie",
       genre: "action",
       userId: "642f0228d20ec6286df9560f",
     });
 
-    expect(res.statusCode).toBe(200);
+    expect(res.statusCode).toBe(201);
     expect(res.body.title).toBe("Movie");
   });
-});
 
-describe("PUT /api/v1/movies/:id", () => {
-  it("should update a movie", async () => {
-    const res = await request(app).put("/api/v1/movies/642f0282d20ec6286df95611").send({
+  test("GET /api/v1/movies/:id should fetch a movie by ID", async () => {
+    const res = await request(app).put("/api/v1/movies/643aa26f7373d2a914334519").send({
       title: "Avatar",
       genre: "action",
       userId: "642f0228d20ec6286df9560f",
     });
+
     expect(res.statusCode).toBe(200);
     expect(res.body.title).toBe("Avatar");
   });
-});
 
-describe("DELETE /api/v1/movies/:id", () => {
-  it("should delete a movie", async () => {
-    const res = await request(app).delete("/api/v1/movies/642f0282d20ec6286df95611");
+  test("PUT /api/v1/movies/:id should update a movie by ID", async () => {
+    const res = await request(app).put("/api/v1/movies/643aa26f7373d2a914334519").send({
+      title: "Avatar",
+      genre: "action",
+      userId: "642f0228d20ec6286df9560f",
+    });
+
     expect(res.statusCode).toBe(200);
+    expect(res.body.title).toBe("Avatar");
+  });
+
+  test("DELETE /api/v1/movies/:id should delete a movie by ID ", async () => {
+    const res = await request(app).delete("/api/v1/movies/643aa2797373d2a91433451b");
+    expect(res.statusCode).toBe(200);
+    expect(res.body.length).toBe(0);
   });
 });
