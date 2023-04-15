@@ -9,8 +9,8 @@
     "test": "jest --forceExit --detectOpenHandles  --watchAll --maxWorkers=1",
     "build": "tsc",
     "lint": "eslint . --ext .ts",
-    "start": "node src/server.ts",
-    "prod": "npm run build && npm run start"
+    "start": "ts-node --transpile-only src/server.ts",
+    "production": "ts-node --transpile-only dist/server.js"
   },
   "keywords": [
     "express",
