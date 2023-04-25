@@ -9,7 +9,7 @@ import routes from "./routes/routes";
 
 const app: Application = express();
 
-const dbUrl: string = process.env.MONGO_URI ?? "mongodb://localhost:27017/ifma_test";
+const dbUrl: string = process.env.MONGO_URI ?? "mongodb://localhost:27017/boilerplate";
 
 // Middleware
 app.use(cors());

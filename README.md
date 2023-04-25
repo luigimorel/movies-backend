@@ -1,6 +1,6 @@
 # Introduction
 
-This repo contains my solution to the recruitment task at IFMA
+Movies REST API
 
 ## The task
 
@@ -39,8 +39,8 @@ $ docker pull mongo # Pull the mongo image from Docker Hub
 $ docker run --name some-name -d mongo:tag  # Create a container
 $ docker exec -it some-name sh # Terminal for the mongo container
 $ root@3fdfdadd6690:/# mongosh # Launch mongo's shell
-$ test> use ifma_test # Create a database named ifma_test
-$ ifma_test # Database created succesfully
+$ test> use boilerplate # Create a database named boilerplate
+$ boilerplate # Database created succesfully
 ```
 
 4. Copy the `env` variables and fill in the details

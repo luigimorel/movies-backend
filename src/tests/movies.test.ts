@@ -3,7 +3,7 @@ import request from "supertest";
 import app from "../app";
 
 beforeEach((done) => {
-  mongoose.connect(process.env.MONGODB_URI ?? "mongodb://localhost:27017/ifma_test");
+  mongoose.connect(process.env.MONGODB_URI ?? "mongodb://localhost:27017/boilerplate");
   done();
 });
 

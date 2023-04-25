@@ -1,5 +1,5 @@
 {
-  "name": "ifma_test",
+  "name": "boilerplate",
   "version": "1.0.0",
   "description": "An API built with NodeJS, Express, MongoDB and TypeScript",
   "main": "src/server.ts",
